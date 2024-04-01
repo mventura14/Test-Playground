@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>carousel3d</title>
+
+  <link rel="stylesheet" href="css\carousel3d.css">
+</head>
+
+<body class="container">
+  <div class="carousel-settings">
+    <div>
+      <select id="carouselElementSelection">
+        <option selected value="carousel">Carousel</option>
+        <option selected value="items">Carousel Items</option>
+    </select>
+      <p>Rotate X</p>
+      <input type="number">
+      <input type="range" name="width" id="rotateX" value="-90" min="-360" max="360" step="0.01">
+      <p>Rotate Y</p>
+      <input type="number">
+      <input type="range" name="height" id="rotateY" value="0" min="-180" max="180" step="0.01">
+      <p>Rotate Z</p>
+      <input type="number">
+      <input type="range" name="radius" id="rotateZ" value="0" min="-180" max="180" step="0.01">
+      <p>Translate X</p>
+      <input type="number">
+      <input  type="range" name="vertical" id="translateX" value="0" min="-2000" max="2000" step="0.01">
+      <p>Translate y</p>
+      <input type="number">
+      <input  type="range" name="tilt" id="translateY" value="0" min="-1800" max="1800" step="0.01">
+      <p>Translate Z</p>
+      <input type="number">
+      <input  type="range" name="tilt" id="translateZ" value="0" min="-1800" max="1800" step="0.01">
+    </div>
+  </div>
+
+
+
+
+
+  <div class="carousel-3d">
+
+    <ul class="carousel-plane">
+      <li>
+        <div>
+          <img src="img\1.-Moraine_final.webp" alt="">
+        </div>
+      </li>
+      <li>
+        <div>
+          <img src="img\istockphoto-1350790521-612x612.jpg" alt="">
+        </div>
+        
+      </li>
+      <li>
+        <div>
+          <img src="img\photo-1544376798-89aa6b82c6cd.avif" alt="">
+        </div>
+      </li>
+      <li>
+        <div>
+          <img src="img\portrait-image.jpg" alt="">
+        </div>
+      </li>
+      <li>
+        <div>
+          <video src="img\a7ac50a72e05db5c785825b96d6cee9c.mp4" autoplay muted></video>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="js/carousel3d.js"></script>
+</body>
+
+</html>

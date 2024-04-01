@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100svw;
+    height: 100svh;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    perspective: 200px;
+    perspective-origin: 50% 20%;
+}
+
+.container3d {
+    height: 500px;
+    width: 500px;
+    background-color: rgba(137, 43, 226, 0);
+    /* border-radius: 50%; */
+    display: grid;
+    place-items: center;
+
+    /* transform: rotate3d(1, 0, 0, 85deg); */
+    transform: rotateX(85deg);
+
+    transform-style:preserve-3d;
+    
+    .rect {
+        height: 100px;
+        width: 250px;
+        background-color: rgb(43, 226, 52);
+        /* transform: rotate3d(1, 0, 0, 90deg) rotate3d(0, 0, 1, 90deg) rotate3d(1, 0, 0, 45deg) rotate3d(0, 1, 0, 45deg); */
+        /* transform: rotateX(90deg) rotateZ(90deg) rotatex(45deg) rotateY(45deg); */
+
+       
+            backface-visibility: visible;
+            transform: rotateY(180deg);
+            background-color: red;
+       
+          
+    }
+
+}
+
+.card {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    perspective: 1000px; /* Perspective for 3D transformations */
+  }
+  
+  .card .front,
+  .card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Hide the back face by default */
+  }
+  
+  .card .front {
+    background-color: #3498db; /* Blue */
+    color: white;
+    transform-style: preserve-3d; /* Ensure proper rendering of 3D transformed children */
+    animation: flipAnimation 1s forwards; /* Apply the flip animation */
+  }
+  
+  .card .back {
+    background-color: #e74c3c; /* Red */
+    color: white;
+    transform-style: preserve-3d; /* Ensure proper rendering of 3D transformed children */
+    transform: rotateY(180deg); /* Initially rotate the back face */
+  }
+  
+  @keyframes flipAnimation {
+    from {
+      transform: rotateY(0deg); /* Start with the front face */
+    }
+    to {
+      transform: rotateY(-180deg); /* Rotate to show the back face */
+    }
+  }
+  

@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    height: 100dvh;
+
+    touch-action: none;
+    background: #202020;
+    perspective: 1000px;
+}
+
+
+.orbitObj {
+    position: absolute;
+    margin: auto;
+    display: flex;
+    transform-style: preserve-3d;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+
+.carousel-3d {
+    --_height: 170px;
+    --_width: 120px;
+
+
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    display: flex;
+    transform: rotateX(75deg);
+
+    .carousel-items, .carousel-items-bg {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transform-style: preserve-3d;
+        
+
+
+        background-color: rgb(0, 0, 0);
+        border-radius: 50%;
+        list-style: none;
+        height: 500px;
+        width: 500px;
+
+        & li {
+            transform-style: preserve-3d;
+           position: absolute;
+            width: var(--_width);
+            height: var(--_height);
+            border-radius: 1em;
+            top: calc(50% - (var(--_height)/2));
+            left: calc(50% - (var(--_width)/2));
+            display: block;
+            /* overflow: auto; */
+
+
+
+            &:has( :first-child) {
+                background-color: rgb(0, 0, 0);
+                
+                box-shadow: 0 0 10px #ffffff;
+                -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+
+                &:hover{
+                    box-shadow: 0 0 15px rgb(255, 255, 255);
+                    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0009);
+                }
+                
+           
+            }
+
+            & div{
+                border-radius: 1em;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            &:has( :first-child:focus){
+                 box-shadow: 0 0 15px 5px rgb(170, 32, 32);
+            }
+          
+        }
+
+        
+
+    }
+
+    .item-bg {
+        background-color: rgb(255, 0, 0);
+    }
+
+    .empty {
+        height: 0 !important;
+        width: 0 !important;
+        background-color: blue;
+    }
+
+
+    img,
+    video,
+    a {
+        width: 100%;
+        height: 100%;
+    }
+
+
+}
+
+.stats {
+    position: absolute;
+    z-index: 1;
+    background-color: green;
+    padding: 1em;
+    border-radius: 1em;
+    display: flex;
+    flex-flow: column;
+    height: max-content;
+
+    & input {
+        padding: 1em
+    }
+}
+
+
+
+@keyframes spin {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes spinRevert {
+    from {
+        transform: rotateZ(360deg);
+    }
+
+    to {
+        transform: rotateZ(0deg);
+    }
+}

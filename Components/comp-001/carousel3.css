@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    overflow: hidden;
+}
+
+main {
+    height: 100dvh;
+    background-color: rebeccapurple;
+}
+
+.container {
+    /* width: 75dvw; */
+    height: 75dvh; 
+    /* background-color: black; */
+    margin: auto;
+    display: grid;
+    place-items: center;
+    /* transform-style: preserve-3d; */
+    color: white;
+}
+
+
+
+
+.carousel3 {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    /* background-color: red; */
+    /* display: grid; */
+    /* place-items: center; */
+    list-style: none;
+    transform: rotateX(70deg) translateY(30px);
+    transform-style: preserve-3d;
+    perspective: 3000px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+
+
+    div {
+        background-color: aqua;
+        display: grid;
+        place-items: center;
+        /* animation: spin 50s infinite linear; */
+        transform-style: preserve-3d;
+        
+
+        
+    }
+
+    li {
+        transform-style: preserve-3d;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        div {
+            transform-style: preserve-3d;
+            position: absolute;
+            height: 500px;
+            /* animation: spin3 20s infinite linear; */
+           width: 20px;
+           transform: rotateZ(45deg) rotateY(80deg) rotate3d();
+           
+        }
+    }
+
+}
+
+.rotate3d{
+    height: 300px;
+    width: 500px;
+    background-color: aqua;
+    transform: rotate3d(0, 0, 1, 45deg); 
+}
+
+@keyframes spin {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+
+
+@keyframes spin2 {
+    
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+
+    }
+
+    25% {
+
+        transform: rotateX(20deg) rotateY(360deg);
+    }
+
+    50% {
+
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    75% {
+
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+
+    100% {
+
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+}
+
+@keyframes spin3 {
+    
+    0% {
+        transform: rotateZ(0deg) rotateY(0deg);
+
+    }
+
+    25% {
+
+        transform: rotateZ(20deg) rotateY(360deg);
+    }
+
+    50% {
+
+        transform: rotateZ(0deg) rotateY(0deg);
+    }
+
+    75% {
+
+        transform: rotateZ(-20deg) rotateY(360deg);
+    }
+
+    100% {
+
+        transform: rotateZ(0deg) rotateY(0deg);
+    }
+
+}
